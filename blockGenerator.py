@@ -1,8 +1,35 @@
 #! /bin/python3
 # BTW I use Arch Linux ;)
 
+import argparse, os
+
+
+def isDirectory(path):
+    if os.path.isdir(path):
+        return path
+    else:
+        raise argparse.ArgumentTypeError(f"{path} n'est pas un répertoire valide ;(")
+
+parser = argparse.ArgumentParser(description="Un petit programme python pour ajouter autant de textures que l'on veut au datapack silva-laser")
+
+parser.add_argument("--datapack",
+					dest="datapack",
+					type=isDirectory,
+					help="L'emplacement du datapack")
+parser.add_argument("--resourcepack",
+					dest="resourcepack",
+					type=isDirectory,
+                    help="L'emplacement du resourcepack")
+
+args = parser.parse_args()
+
 datapack = "./silva-laser-datapack-e2751"
-ressourcepack = "./silva-laser-resourcepack"
+if args.datapack:
+	datapack = args.datapack
+
+resourcepack = "./silva-laser-resourcepack"
+if args.resourcepack:
+	resourcepack = args.resourcepack
 
 
 def loadTemplate(name):
@@ -48,7 +75,7 @@ baseModelData = 6662
 for i,t in enumerate(textures):
 	print(f"Création des fichiers pour le block {t} ...... ", end="\r")
 	# création de la texture
-	with open(f"{ressourcepack}/assets/slaser/models/{t}.json","w") as f:
+	with open(f"{resourcepack}/assets/slaser/models/{t}.json","w") as f:
 		f.write(templates["textureTemplate"].replace("{{BLOCK}}", t))
 	
 	# creation de la commande
@@ -76,7 +103,7 @@ with open(f"{datapack}/data/slaser/functions/place/drop.mcfunction","w") as f:
 with open(f"{datapack}/data/slaser/functions/craft/add_block/select.mcfunction", "w") as f:
 	f.write(selectFile)
 
-with open(f"{ressourcepack}/assets/minecraft/models/item/ghast_spawn_egg.json", "w") as f:
+with open(f"{resourcepack}/assets/minecraft/models/item/ghast_spawn_egg.json", "w") as f:
 	f.write(templates["ghastSpawnEggTemplate"].replace("{{OVERRIDE}}", ghastSpawnEggFile))
 
 print("Création des fichiers généraux ...... Ok")
