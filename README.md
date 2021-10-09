@@ -1,5 +1,12 @@
 # silvatorTextureGenerator
 Generateur de textures pour le datapack silva-laser
+
+Vidéo youtube: [ici](https://www.youtube.com/watch?v=S3YaT7lix4w)
+
+Lien de téléchargement: [ici](https://www.planetminecraft.com/data-pack/silva-laser/)
+
+Mais surtout, ne clicker pas [ici](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
+
 Bon ben voila quoi, ce datapack est **génial** mais il n'est pas parfaitement complet: il manque *la pluspart* des textures de block minecraft 😭.
 
 J'ai donc décidé de faire un programme pour les ajouter ! 😱
