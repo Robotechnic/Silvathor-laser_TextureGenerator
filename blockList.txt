@@ -1,0 +1,8 @@
+oak_planks
+obsidian
+dirt
+stone
+polished_andesite
+spruce_planks
+sand
+iron_ore

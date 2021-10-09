@@ -1,0 +1,2 @@
+
+execute if entity @e[type=item,nbt={Item:{id:"minecraft:{{BLOCK}}", Count:1b}}, distance = ...5] run function slaser:craft/add_block/{{BLOCK}}

@@ -1,0 +1,7 @@
+{
+	"credit": "Made with Blockbench",
+	"parent":"slaser:normal_with_block",
+	"textures": {
+		"3": "block/{{BLOCK}}"
+	}
+}
