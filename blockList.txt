@@ -6,3 +6,4 @@ polished_andesite
 spruce_planks
 sand
 iron_ore
+copper_block

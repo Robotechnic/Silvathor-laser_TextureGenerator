@@ -4,7 +4,6 @@
 		"0": "block/repeater",
 		"1": "block/smooth_stone",
 		"2": "block/glass",
-		"3": "",
 		"particle": "block/repeater"
 
 	},
