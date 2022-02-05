@@ -42,7 +42,8 @@ templatesToLoad = [
 	"textureTemplate",
 	"ghastSpawnEggOverrideTemplate",
 	"ghastSpawnEggTemplate",
-	"selectTemplate"
+	"selectTemplate",
+	"normal_with_block"
 ]
 
 dropFile = ("kill @e[type=armor_stand,tag=s_new_laser,distance=..1]\n" +
@@ -71,6 +72,10 @@ print("Recuperation des template ...... Ok")
 
 
 print("Creation des fichiers textures et des commandes ")
+
+with open(f"{resourcepack}//assets/slaser/models/normal_with_block.json","w") as f:
+	f.write(templates["normal_with_block"])
+
 baseModelData = 6662
 for i,t in enumerate(textures):
 	print(f"Création des fichiers pour le block {t} ...... ", end="\r")
